@@ -7,9 +7,9 @@ function reducer(state, action) {
 
   switch (action.type) {
     case "dec":
-      return { ...state, count: state.step };
+      return { ...state, count: state.count - state.step };
     case "inc":
-      return { ...state, count: state.step };
+      return { ...state, count: state.count + state.step };
     case "setCount":
       return { ...state, count: action.payload };
     case "setStep":
@@ -19,9 +19,6 @@ function reducer(state, action) {
     default:
       throw new Error("Unknown action");
   }
-  // if (action.type === "inc") return state + action.payload;
-  // if (action.type === "dec") return state - action.payload;
-  // if (action.type === "setCount") return action.payload;
 }
 
 function DateCounter() {
